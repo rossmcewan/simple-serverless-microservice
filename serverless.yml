@@ -1,0 +1,10 @@
+service: ${env:serviceName}
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  
+functions:
+  simple_function:
+    handler: handler.simple
