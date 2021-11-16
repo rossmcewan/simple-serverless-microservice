@@ -1,6 +1,6 @@
-const getIsolationAwareName = (name) => {
+const getIsolationAwareName = (name, separator='_') => {
   if (process.env.isolation === "silo") {
-    return `${name}_${process.env.TENANT_ID}`;
+    return `${name}${separator}${process.env.TENANT_ID}`;
   }
   return name;
 };
@@ -14,7 +14,7 @@ module.exports.getFunctionName = () => {
 };
 
 module.exports.getServiceName = () => {
-  return getIsolationAwareName(process.env.serviceName);
+  return getIsolationAwareName(process.env.serviceName, '-');
 };
 
 module.exports.getTableName = () => {
