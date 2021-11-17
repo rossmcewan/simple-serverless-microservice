@@ -1,6 +1,7 @@
 service: ${file(./utils.js):getServiceName}
 frameworkVersion: '2'
 
+
 provider:
   name: aws
   runtime: nodejs12.x
